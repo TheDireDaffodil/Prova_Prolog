@@ -1,0 +1,30 @@
+%prima definisco un nodo
+%
+%
+isNode(void).
+isNode(node(_Key, _Value, Left, Right)):-
+    isNode(Right),
+    isNode(Left).
+%poi un albero
+isTree(tree(_Name, Root)):-
+    
+isTree(tree(_Name, Root)):-
+    isTree(Root). %Che cazzo è?
+
+%bst_search(key, tree, value)
+
+bst_search(Key, tree(_Root), Value):-
+	bst_search(Key, Root, Value).
+
+bst_search(Key, node(Key, Value, _, _), Value).
+bst_search(Key, node(Key, _, Left, _), Value):-
+	key<k.
+	bst_search(Key,Left,Value).
+bst_search(Key, node(Key, _, _, Right), Value):-
+	key>k.
+	bst_search(Key,Right,Value).
+
+bst_insert(Key, Value, tree(TreeName, Root), tree(TreeName, NewRoot):-
+	bst_insert(Key, Value, Root, Newroot)
+bst_insert(Key, Value, void(Key, Value, void, void))
+bst_insert(Key, Value, node(Key, Value, Left, Right)_) :- fail
